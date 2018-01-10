@@ -1,28 +1,25 @@
-# git-test
-Some basic how-to's so new students can learn git workflows without breaking another repository
+# Beginners
+Some basic how-to's so new students can learn git workflows without breaking another repository and instructional reference for development with git on windows machines.
 
 
 ## Intial Setup - SSH and github integration with Windows Laptop
 It is necessary to communicate/clone with github via ssh keys (Secure SHell keys) and not via https
+
 1. install [git](https://git-scm.com/download/win)
 2. select the default options and just make sure you have `vim as default text editor for git`
 2. open `git bash`
 3. ssh-keygen -t rsa -b 4096 -C "your_github_email@email.com"
 4. use the default file name `id_rsa` by hitting enter
 5. choose a password, or just hit enter twice
-6. type `ls ~/.ssh` and you should see 2 files: id_rsa and id_rsa.pub which are a public/private key pair, continue to 7, however, if you have an error instead go to 6a through 6c
-
-6a. if you see an error with `ls ~/.ssh`: sometimes the ssh-keygen does not do things properly and you have to make your own folders and move files, continue with 6b, 6c
-
-6b. type `mkdir ~/.ssh`
-
-6c. type `mv id_rsa ~/.ssh` and `mv id_rsa.pub ~/.ssh` this will make the folder used to hold keys and move the keys that are in your current folder to the proper location
-
-7. to authorize yourself to github you need to take the public key and import that to github so type `cat ~/.ssh/id_rsa.pub`
-8. select all the text and open github and go to settings, `ssh and gpg keys`
-9. click the green new ssh key button
-10. set a title and paste the public key string and click the green add key button
-11. tell git bash you have a new ssh key: `eval $(ssh-agent -s)` and `ssh-add ~/.ssh/id_rsa`
+6. type `ls ~/.ssh` and you should see 2 files: id_rsa and id_rsa.pub which are a public/private key pair, continue to 11, however, if you have an error instead go to steps 8 through 10
+7. if you see an error with `ls ~/.ssh`: sometimes the ssh-keygen does not do things properly and you have to make your own folders and move files, continue with steps 8, 9, and 10
+8. type `mkdir ~/.ssh`
+9. type `mv id_rsa ~/.ssh` and `mv id_rsa.pub ~/.ssh` this will make the folder used to hold keys and move the keys that are in your current folder to the proper location
+10. to authorize yourself to github you need to take the public key and import that to github so type `cat ~/.ssh/id_rsa.pub`
+11. select all the text and open github and go to settings, `ssh and gpg keys`
+12. click the green new ssh key button
+13. set a title and paste the public key string and click the green add key button
+14. tell git bash you have a new ssh key: `eval $(ssh-agent -s)` and `ssh-add ~/.ssh/id_rsa`
 
 if you have invalid key make sure you do not have newlines in the key, it should all be 1 long line ending with your email
 
