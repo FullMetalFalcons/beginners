@@ -8,7 +8,7 @@ It is necessary to communicate/clone with github via ssh keys (Secure SHell keys
 1. install [git](https://git-scm.com/download/win)
 2. select the default options and just make sure you have `vim as default text editor for git`
 2. open `git bash`
-3. ssh-keygen -t rsa -b 4096 -C "your_github_email@email.com"
+3. type `ssh-keygen -t rsa -b 4096 -C "your_github_email@email.com"`
 4. use the default file name `id_rsa` by hitting enter
 5. choose a password, or just hit enter twice
 6. type `ls ~/.ssh` and you should see 2 files: id_rsa and id_rsa.pub which are a public/private key pair, continue to 11, however, if you have an error instead go to steps 8 through 10
@@ -21,9 +21,9 @@ It is necessary to communicate/clone with github via ssh keys (Secure SHell keys
 13. set a title and paste the public key string and click the green add key button
 14. tell git bash you have a new ssh key: `eval $(ssh-agent -s)` and `ssh-add ~/.ssh/id_rsa`
 
-if you have invalid key make sure you do not have newlines in the key, it should all be 1 long line ending with your email
+if you receive an error about an invalid key when adding it to github, make sure you do not have newlines in the key, it should all be 1 long line ending with your email
 
-now you have an ssh key connected to github and you can interact with the repositories
+now you have an ssh key connected to github and you can interact with the repositories via the website and now through your laptop
 
 
 # Initial Setup - Git User Configuration
@@ -34,15 +34,16 @@ You need to setup your user information when saving code to github and that is t
 4. type `git config --global user.name` you should see your name
 5. type `git config --global user.email` you should see your email
 
+now you told git who you are and can properly save changes with commits in git and push to github
 
 # Initial Setup - Verify Email
 if you have not verified your email with github yet for your github account
 1. open github in a browser
-2. go to settings -> emails
+2. go to settings -> emails (if there should be an `!` on the emails button on the sidebar)
 3. click verify email
-4. open email and click that link
+4. open your email and click that verify link
 
-now you have a verified key locally and email address synced to github and you can modify code if you have permissions to
+now you have a verified key locally and email address synced to github and you can modify code if you have permissions to on your laptop and push changes to github properly
 
 
 ## Terms
@@ -95,8 +96,11 @@ since you have an ssh key setup you should use this method, and the url should b
 
 ## Start working - make a branch to add some feature to the robot
 You want to start development, so it is good to differentiate your changes from other developers until you can verify your changes are acceptable.  This is merged usually done via Pull Request (PR) and is very common
-1. open git bash and navigate to the beginners repository if you are not alreayd there
-2. 
+1. open git bash and navigate to the beginners repository if you are not already there
+2. type `git branch -b your-github-username` this will make a branch in your local repository named `your-github-username`
+3. type `git push -u origin your-github-username` which updates github that it needs to be aware of a branch you are working on locally, and will push changes to in the future
+4. 
+5. 
 
 
 ## Finish working - make a pull request on github
@@ -110,9 +114,11 @@ You want to start development, so it is good to differentiate your changes from 
 8. if everyone wants your changes and you see the green text for `able to merge` then click the green `merge pull request` button and you should see a purple icon saying `merged`
 8. you have successfully merged your code into the base code for the repository and everyone can pull your changes from master to sync up with your changes
 
+
 ## Start working - cause a merge conflict
+When working in teams it is common to have people working on the same files and this can result in two people editing the same lines of code and trying to push the changes at the same time, causing a conflict in one of the pushes.
 1. open git bash and navigate to the beginners repository if you are not already there
-2. 
+2. you should see a file `merge-conflict.txt` and you will be modifying this file
 3. 
 4. 
 
@@ -128,11 +134,11 @@ changes you made
 old changes to not save
 >>>>>> master
 ```
-you want to save your changes usually so delete the <<<< ===== and >>>>> and related branch names, resulting in
+you want to save your changes usually so delete the <<<< ===== and >>>>> and related branch names and any extra empty lines, resulting in only
 ```
 changes you made
 ```
-4. click `mark as resolved` and click the green `commit merge` button to save these fixed changes
+4. click the grey `mark as resolved` button and click the green `commit merge` button to save these fixed changes
 5. you can then click the green `merge pull request` button on your pull request page like normal
 
 
