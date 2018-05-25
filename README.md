@@ -2,6 +2,18 @@
 Some basic how-to's so new students can learn git workflows without breaking another repository and instructional reference for development with git on windows machines.
 
 
+## Terms
+- `repository` = the singular location where code is saved and others can pull/push to
+- `clone` = making a local copy of the repository on your computer
+- `commit` = usually locally saved changes to be sent to the repository, when typing a message with -m "something" the something is like a reason for saving the changes, a ctrl + s with giving a reason for saving things
+- `pull` = sync your local copy with the updates from the remote repository
+- `push` = the local commits are uploaded to the repository
+- `issue` = a writeup of some problem with code that a user has reported and you wish to track/fix
+- `branch` = the current location you are working on, usually master for stable code and "feature_xyz" for your current development
+- `remote` = the name of the server you are pushing code to, origin is default by convention, specifically pushes to github as that is what we are using, you can add a remote if you want to push to other servers if desired
+- `merge` = you want to sync your changes with another developer/the repository and there are modifications that require approval/conflicts to overwrite
+
+
 ## Intial Setup - SSH and github integration with Windows Laptop
 It is necessary to communicate/clone with github via ssh keys (Secure SHell keys) and not via https
 
@@ -44,18 +56,6 @@ if you have not verified your email with github yet for your github account
 4. open your email and click that verify link
 
 now you have a verified key locally and email address synced to github and you can modify code if you have permissions to on your laptop and push changes to github properly
-
-
-## Terms
-- `repository` = the singular location where code is saved and others can pull/push to
-- `clone` = making a local copy of the repository on your computer
-- `commit` = usually locally saved changes to be sent to the repository, when typing a message with -m "something" the something is like a reason for saving the changes, a ctrl + s with giving a reason for saving things
-- `pull` = sync your local copy with the updates from the remote repository
-- `push` = the local commits are uploaded to the repository
-- `issue` = a writeup of some problem with code that a user has reported and you wish to track/fix
-- `branch` = the current location you are working on, usually master for stable code and "feature_xyz" for your current development
-- `remote` = the name of the server you are pushing code to, origin is default by convention, specifically pushes to github as that is what we are using, you can add a remote if you want to push to other servers if desired
-- `merge` = you want to sync your changes with another developer/the repository and there are modifications that require approval/conflicts to overwrite
 
 
 # Workflows
