@@ -16,7 +16,7 @@ Some basic how-to's so new students can learn git workflows without breaking ano
 - `merge` = you want to sync your changes with another developer/the repository and there are modifications that require approval or conflicts to resolve for the overwrite to occur
 - `pull request` = you have pushed a new branch to the repository with new commits. You can begin the process of merging in your changes
 
-- `<your-github-username>` = would be replaced with whatever your username is, without the brackets. So if your username is "bestUserPerson" and the instructions say type 
+- `<your-github-username>` = would be replaced with whatever your username is, without the brackets. So if your username is "bestUserPerson" and the instructions say type `git checkout -b <your-github-username>` then type `git checkout -b bestUserPerson`
 
 
 ## Intial Setup - SSH and github integration with Windows Laptop
